@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Visualizing Life in Hampton Roads</title>
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+	<script src="js/bootstrap-lightbox.min.js"></script>	
+	<script>
+		$('#Lightbox').lightbox();
+	</script>
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/bootstrap-lightbox.min.css" rel="stylesheet">
+	
+    <!-- Custom CSS -->
+    <link href="css/small-business.css" rel="stylesheet">
+
+
+		
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">
+                    <img src="images/logo.png" alt="">
+                </a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a  data-toggle="modal" data-target="#Contact" >Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container">
+
+        <!-- Heading Row -->
+        <div class="row">
+            <div class="col-md-8">
+                <img class="img-responsive img-rounded" src="images/mainImage.png" alt="">
+            </div>
+            <!-- /.col-md-8 -->
+            <div class="col-md-4">
+                <h1>Visualizing life in Hampton Roads</h1>
+                <p>A group of visualizations that aim to show how income, employment, commuting patterns and high school graduation rataes have changed over time in Hampton Roads. Click the button below to start exploring. </p>
+                <!-- <a class="btn btn-primary btn-lg" href="#">Project Demo !</a> -->
+				<!--<a  data-toggle="modal" data-target="#ProDemo" class="btn btn-primary btn-lg">Project Demo !</a> -->
+				<a  data-toggle="modal" target="_blank" href="http://www.cs.odu.edu/~psajjan/cs698/Visualizations/" class="btn btn-primary btn-lg">Project Demo !</a>
+            </div>
+            <!-- /.col-md-4 -->
+        </div>
+        <!-- /.row -->
+
+        <hr>
+
+        <!-- Call to Action Well -->
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="well text-center">
+                    <h2>Developed by Prasanna Sajjan</h2>
+					<h4>Department of Computer Science, Old Dominion University</h4> Under the Supervison of <h4>Dr. Michele C. Weigle</h4>
+                </div>
+            </div>
+            <!-- /.col-lg-12 -->
+        </div>
+        <!-- /.row -->
+
+        <!-- Content Row -->
+        <div class="row">
+
+            <!-- /.col-md-4 --> 
+            <div class="col-md-4">
+                <h2>Paper and Presentation</h2>
+                <p>Coming Soon</p>
+                <a data-toggle="modal" data-target="#paperpresentation" class="btn btn-default" href="#">More Info</a>
+            </div>				
+            <div class="col-md-4">
+                <h2>Data Sources</h2>
+                <p>List of all the data sources that were used to build the visualizations</p>
+                <a  data-toggle="modal" data-target="#datasource"  class="btn btn-default" href="#">More Info</a>
+            </div>		
+			
+            <!-- /.col-md-4 -->
+            <div class="col-md-4">
+                <h2>Tools/Technologies Used</h2>
+                <p>Tools and Technologies used to implement visualizations in this project</p>
+                <a   data-toggle="modal" data-target="#tooltech"  class="btn btn-default" href="#">More Info</a>
+            </div>		
+            <!-- /.col-md-4 -->
+        </div>
+        <!-- /.row -->
+
+	<!--templates-->
+		
+		<!-- Pro Demo -->
+		<div class="modal fade bs-example-modal-lg" id="Contact" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			
+		  <div class="modal-dialog modal-lg">
+			<div class="modal-content">
+			  <div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title" id="myModalLabel">Visualizing Life in Hampton Roads!</h4>
+			  </div>
+				<div class="modal-body">
+					<div class="col-lg-12">
+						<div class="well text-center">
+							<h1>Prasanna Sajjan</h1>
+							<h4>Graduate Student, Department of Computer Science</h4> Got Questions? <h4>Contact: psajjan@cs.odu.edu</h4>
+						</div>
+					</div>
+				</div>
+			  <div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				<!--<button type="button" class="btn btn-primary">Save changes</button>-->
+			  </div>
+			</div>
+		  </div>
+		</div>
+		
+		<!-- Pro Demo -->
+		<!--<div class="modal fade bs-example-modal-lg" id="ProDemo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			
+		  <div class="modal-dialog modal-lg">
+			<div class="modal-content">
+			  <div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title" id="myModalLabel">Visualizing Life in Hampton Roads</h4>
+			  </div>
+			  <div class="modal-body">
+				 <center><img src="images/Overall.PNG" width="800" height="500"/></center>
+				 <br/>
+				 <p style="text-align:justify;">Click on Proceed to explore life in Hampton roads.</p>
+			  </div>
+			  <div class="modal-footer">
+				<a class="btn btn-primary" target="_blank" data-toggle="modal" href="http://www.cs.odu.edu/~psajjan/HRPDC_Project/Visualizations/" >Proceed</a>
+				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+			  </div>
+			</div>
+		  </div>
+		</div>-->
+		
+		<!-- What Why How -->
+		<div class="modal fade bs-example-modal-lg" id="whatwhyhow" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			
+		  <div class="modal-dialog modal-lg">
+			<div class="modal-content">
+			  <div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title" id="myModalLabel">What-Why-How Framwork</h4>
+			  </div>
+			  <div class="modal-body">
+				 <img src="images/whatwhyhowtable.png"/>
+			  </div>
+			  <div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				<!--<button type="button" class="btn btn-primary">Save changes</button>-->
+			  </div>
+			</div>
+		  </div>
+		</div>
+	
+		<!-- Proposal -->
+		<div class="modal fade  bs-example-modal-lg" id="proposal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			
+		  <div class="modal-dialog  modal-lg">
+			<div class="modal-content">
+			  <div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title" id="myModalLabel">Project Proposal</h4>
+			  </div>
+			  <div class="modal-body">
+				 <img src=""/>
+				 <p>coming soon</p>
+			  </div>
+			  <div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				<!--<button type="button" class="btn btn-primary">Save changes</button>-->
+			  </div>
+			</div>
+		  </div>
+		</div>	
+		
+		<!-- update -->
+		<div class="modal fade  bs-example-modal-lg" id="update" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			
+		  <div class="modal-dialog  modal-lg">
+			<div class="modal-content">
+			  <div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title" id="myModalLabel">Project Proposal</h4>
+			  </div>
+			  <div class="modal-body">
+				 <img src=""/>
+				 <p>coming soon</p>
+			  </div>
+			  <div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				<!--<button type="button" class="btn btn-primary">Save changes</button>-->
+			  </div>
+			</div>
+		  </div>
+		</div>	
+		
+		<!-- Paper and presentation -->
+		<div class="modal fade bs-example-modal-lg" id="paperpresentation" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			
+		  <div class="modal-dialog modal-lg">
+			<div class="modal-content">
+			  <div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title" id="myModalLabel">Visualizing Life in Hampton Roads</h4>
+			  </div>
+			  <div class="modal-body">
+				 <img src=""/>
+				 <p>Coming Soon!</p>
+			  </div>
+			  <div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				<!--<button type="button" class="btn btn-primary">Save changes</button>-->
+			  </div>
+			</div>
+		  </div>
+		</div>		
+		
+		<!-- datsource -->
+		<div class="modal fade  bs-example-modal-lg" id="datasource" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			
+		  <div class="modal-dialog  modal-lg">
+			<div class="modal-content">
+			  <div class="modal-header"> 
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title" id="myModalLabel">Data Sources</h4>
+			  </div>
+			  <div class="modal-body">
+					  <div class="media">
+							   <a class="pull-left"href="http://www.bls.gov/cew/">
+								  <img class="media-object"  width="400" height="250"  src="images/Labor.png" alt="Media Object">
+							   </a>
+							   <div class="media-body"  style="text-align:justify;">
+								  <h4 class="media-heading">Bureau of Labor Statistics</h4>
+								  The Quarterly Census of Employment and Wages (QCEW) program publishes a quarterly count of employment and wages reported by employers covering 98 percent of U.S. jobs, available at the county, MSA, state and national levels by industry. <br/>
+								  The Occupational Employment Statistics (OES) program produces employment and wage estimates annually for over 800 occupations. These estimates are available for the nation as a whole, for individual States, and for metropolitan and nonmetropolitan areas; national occupational estimates for specific industries are also available.
+							   </div>
+					   </div>	
+
+					  <div class="media">
+							   <a class="pull-left"href="https://www.census.gov/hhes/commuting/data/commutingflows.html">
+								  <img class="media-object"  width="400" height="250"  src="images/Census.png" alt="Media Object">
+							   </a>
+							   <div class="media-body"  style="text-align:justify;">
+								  <h4 class="media-heading">American Community Survey and Decennial	Census Journey to work data </h4>
+								  Commuting (Journey to Work) refers to a worker’s travel from home to work. Place of work refers to the geographic location of the worker’s job. A worker is defined as a person 16 years old and over, who were employed and at work during a reference period. There are several surveys conducted by the Census Bureau that ask questions regarding commuting and place of work, such as the American Community Survey (ACS), Decennial Census (2000 and prior), American Housing Survey (AHS), and the Survey of Income and Program Participation (SIPP).
+							   </div>
+					   </div>
+
+					  <div class="media">
+							   <a class="pull-left"href="http://www.doe.virginia.gov/statistics_reports/index.shtml">
+								  <img class="media-object"  width="400" height="250"  src="images/Education.png" alt="Media Object">
+							   </a>
+							   <div class="media-body"  style="text-align:justify;">
+								  <h4 class="media-heading">Virginia Department of Education</h4>
+								  VDOE publishes annual state-level, division-level and school-level cohort reports that detail outcomes for students who entered the ninth-grade for the first time together and were scheduled to graduate four years later. Cohort reports include the Virginia On-Time Graduation Rate for the commonwealth, school divisions and high schools and also include data on dropouts, students still in school and students on long-term leave. 
+							   </div>
+					   </div>					   
+					   
+					   
+			  </div>
+			  <div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				<!--<button type="button" class="btn btn-primary">Save changes</button>-->
+			  </div>
+			</div>
+		  </div>
+		</div>		
+		
+		<!-- toolteck -->
+		<div class="modal fade  bs-example-modal-lg" id="tooltech" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			
+		  <div class="modal-dialog  modal-lg">
+			<div class="modal-content">
+			  <div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title" id="myModalLabel">Tools/Technologies Used</h4>
+			  </div>
+			  <div class="modal-body">
+					  <div class="media">
+							   <a class="pull-left"href="http://d3js.org/">
+								  <img class="media-object"  width="117" height="120"  src="images/d3.png" alt="Media Object">
+							   </a>
+							   <div class="media-body"  style="text-align:justify;">
+								  <h4 class="media-heading">D3 : Data-Driven Documents</h4>
+								  D3.js is a JavaScript library for manipulating documents based on data. D3 helps you bring data to life using HTML, SVG, and CSS. D3’s emphasis on web standards gives you the full capabilities of modern browsers without tying yourself to a proprietary framework, combining powerful visualization components and a data-driven approach to DOM manipulation. 
+							   </div>
+					   </div>
+
+					  <div class="media">
+							   <a class="pull-left" href="http://en.wikipedia.org/wiki/HTML">
+								  <img class="media-object"  width="117" height="120"  src="images/ht.png" alt="Media Object">
+							   </a>
+							   <div class="media-body"  style="text-align:justify;">
+								  <h4 class="media-heading">HTML : HyperText Markup Language</h4>
+								  HyperText Markup Language, commonly referred to as HTML, is the standard markup language used to create web pages.
+							   </div>
+					   </div>	
+
+					  <div class="media"> 
+							   <a class="pull-left" href="http://en.wikipedia.org/wiki/Cascading_Style_Sheets">
+								  <img class="media-object"  width="117" height="120"  src="images/css.png" alt="Media Object">
+							   </a>
+							   <div class="media-body"  style="text-align:justify;">
+								  <h4 class="media-heading">CSS : Cascading Style Sheets</h4>
+								  Cascading Style Sheets (CSS) is a style sheet language used for describing the look and formatting of a document written in a markup language.Along with HTML and JavaScript, CSS is a cornerstone technology used by most websites to create visually engaging webpages, user interfaces for web applications, and user interfaces for many mobile applications.
+							   </div>
+					   </div>	
+
+					  <div class="media">
+							   <a class="pull-left" href="http://en.wikipedia.org/wiki/JavaScript">
+								  <img class="media-object"  width="117" height="120"  src="images/js.png" alt="Media Object">
+							   </a>
+							   <div class="media-body"  style="text-align:justify;">
+								  <h4 class="media-heading">JS : JavaScript</h4>
+								  JavaScript also known as ECMAScript, is a dynamic programming language. It is most commonly used as part of web browsers, whose implementations allow client-side scripts to interact with the user, control the browser, communicate asynchronously, and alter the document content that is displayed.
+							   </div>
+					   </div>					   	
+
+					  <div class="media">
+							   <a class="pull-left" href="http://www.tableau.com/">
+								  <img class="media-object"  width="117" height="120"  src="images/Tableau.jpg" alt="Media Object">
+							   </a>
+							   <div class="media-body"  style="text-align:justify;">
+								  <h4 class="media-heading">Tableau</h4>
+								  Tableau is a business intelligence and analytics tool which can help anyone see and understand their data. It can connect
+								  to almost any database, drag and drop to create visualizations, and share with a click.
+							   </div>
+					   </div>
+					   
+			  </div>
+			  <div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				<!--<button type="button" class="btn btn-primary">Save changes</button>-->
+			  </div>
+			</div>
+		  </div>
+		</div>
+
+		<!-- links -->
+		<div class="modal fade  bs-example-modal-lg" id="links" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			
+		  <div class="modal-dialog  modal-lg">
+			<div class="modal-content">
+			  <div class="modal-body">
+					  <div class="media">
+							   <a class="pull-left"href="http://d3js.org/">
+								  <img class="media-object"  width="117" height="120"  src="images/d3.png" alt="Media Object">
+							   </a>
+							   <div class="media-body"  style="text-align:justify;">
+								  <h4 class="media-heading">D3 : Data-Driven Documents</h4>
+								  D3.js is a JavaScript library for manipulating documents based on data. D3 helps you bring data to life using HTML, SVG, and CSS. D3’s emphasis on web standards gives you the full capabilities of modern browsers without tying yourself to a proprietary framework, combining powerful visualization components and a data-driven approach to DOM manipulation. 
+							   </div>
+					   </div>
+
+					  <div class="media">
+							   <a class="pull-left" href="http://en.wikipedia.org/wiki/HTML">
+								  <img class="media-object"  width="117" height="120"  src="images/ht.png" alt="Media Object">
+							   </a>
+							   <div class="media-body"  style="text-align:justify;">
+								  <h4 class="media-heading">HTML : HyperText Markup Language</h4>
+								  HyperText Markup Language, commonly referred to as HTML, is the standard markup language used to create web pages.
+							   </div>
+					   </div>	
+
+					  <div class="media"> 
+							   <a class="pull-left" href="http://en.wikipedia.org/wiki/Cascading_Style_Sheets">
+								  <img class="media-object"  width="117" height="120"  src="images/css.png" alt="Media Object">
+							   </a>
+							   <div class="media-body"  style="text-align:justify;">
+								  <h4 class="media-heading">CSS : Cascading Style Sheets</h4>
+								  Cascading Style Sheets (CSS) is a style sheet language used for describing the look and formatting of a document written in a markup language. While most often used to change the style of web pages and user interfaces written in HTML and XHTML, the language can be applied to any kind of XML document, including plain XML, SVG and XUL. Along with HTML and JavaScript, CSS is a cornerstone technology used by most websites to create visually engaging webpages, user interfaces for web applications, and user interfaces for many mobile applications.
+							   </div>
+					   </div>	
+
+					  <div class="media">
+							   <a class="pull-left" href="http://en.wikipedia.org/wiki/JavaScript">
+								  <img class="media-object"  width="117" height="120"  src="images/js.png" alt="Media Object">
+							   </a>
+							   <div class="media-body"  style="text-align:justify;">
+								  <h4 class="media-heading">JS : JavaScript</h4>
+								  JavaScript also known as ECMAScript, is a dynamic programming language. It is most commonly used as part of web browsers, whose implementations allow client-side scripts to interact with the user, control the browser, communicate asynchronously, and alter the document content that is displayed.
+							   </div>
+					   </div>					   
+
+					  <div class="media">
+							   <a class="pull-left" href="https://www.python.org/">
+								  <img class="media-object"  width="117" height="120"  src="images/py.png" alt="Media Object">
+							   </a>
+							   <div class="media-body"  style="text-align:justify;">
+								  <h4 class="media-heading">Python</h4>
+								  Python is a programming language that lets you work more quickly and integrate your systems more effectively.
+							   </div>
+					   </div>	
+
+					  <div class="media">
+							   <a class="pull-left" href="http://www.json.org/">
+								  <img class="media-object"  width="117" height="120"  src="images/json.png" alt="Media Object">
+							   </a>
+							   <div class="media-body"  style="text-align:justify;">
+								  <h4 class="media-heading">JSON : JavaScript Object Notation</h4>
+								  JSON is a lightweight data-interchange format. It is easy for humans to read and write. It is easy for machines to parse and generate. It is based on a subset of the JavaScript Programming Language, Standard ECMA-262 3rd Edition - December 1999. JSON is a text format that is completely language independent but uses conventions that are familiar to programmers of the C-family of languages, including C, C++, C#, Java, JavaScript, Perl, Python, and many others. These properties make JSON an ideal data-interchange language.
+							   </div>
+					   </div>
+					   
+			  </div>
+			  <div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				<!--<button type="button" class="btn btn-primary">Save changes</button>-->
+			  </div>
+			</div>
+		  </div>
+		</div>		
+		<!--->	
+
+        <!-- Footer -->
+        <footer>
+            <div class="row">
+                <div class="col-lg-12">
+                    <p>Copyright &copy; Prasanna Sajjan 2016</p>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+    <!-- /.container -->
+
+
+
+</body>
+
+</html>

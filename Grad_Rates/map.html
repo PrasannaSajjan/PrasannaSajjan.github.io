@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Graduation Rates in Hampton Roads</title>
+<meta charset="utf-8">
+<style>
+
+    .axis path,
+    .axis line {
+      fill: none;
+      stroke: #000;
+      shape-rendering: crispEdges;
+    }
+    
+    .bar {
+      fill: steelblue;
+    }
+
+
+    .selected {
+        opacity: 0.7;
+    }
+
+    .subunit-boundary {
+        fill: none;
+        stroke: #777;
+        stroke-width: 2px;
+        stroke-dasharray: 2,2;
+        stroke-linejoin: round;
+    }
+
+    .subunit-label {
+        fill: #fff;
+        font-size: 12px;
+        font-weight: 300;
+        text-anchor: middle;
+        text-shadow:
+          -2px 0px 0 #000,
+          0px -2px 0 #000,
+          0px 2px 0 #000,
+          2px 0px 0 #000;
+    }
+
+    .cptooltip {
+        position: absolute;
+        width: 220px;
+        height: 40px;
+        pointer-events: none;
+        background-color: #ffffee;
+        font-family: Helvetica, Sans;
+        text-align: center;
+    }
+
+    body {
+        font-family: Helvetica, Sans;
+    }
+
+    .x.axis path {
+      display: none;
+    }
+    
+    .line {
+      fill: none;
+      stroke: steelblue;
+      stroke-width: 1.5px;
+    }
+
+    .overlay {
+      fill: none;
+      pointer-events: all;
+    }
+    
+    .focus circle {
+      fill: none;
+      stroke: steelblue;
+    }
+
+</style>
+</head>
+
+<body>
+
+<script src="jquery-1.12.3.js"></script>
+<script src="d3.v3.min.js"></script>
+<script src="topojson.v1.min.js"></script>
+<script src="colorbrewer.js"></script>
+
+<form id="axes">
+<table border="0">
+<td>Locality:</td>
+<td><select id="locality" class="localitySelector"></select></td>
+</tr>
+</table>
+</form>
+
+<br />
+
+<script>
+
+    var localityList = {
+        "ALL": "ALL",
+        "Chesapeake": "City of Chesapeake",
+        "Franklin": "City of Franklin",
+        "Hampton": "City of Hampton",
+        "Newport News": "City of Newport News",
+        "Norfolk": "City of Norfolk",
+        "Poquoson": "City of Poquoson",
+        "Portsmouth": "City of Portsmouth",
+        "Suffolk": "City of Suffolk",
+        "Virginia Beach": "City of Virginia Beach",
+        "Williamsburg": "City of Williamsburg",
+        "Gloucester": "Gloucester County",
+        "Isle of Wight": "Isle of Wight County",
+        "James City": "James City County",
+        "Southampton": "Southampton County",
+        "Surry": "Surry County",
+        "York": "York County"
+    };
+
+    var localityoptions = d3.select("#locality");
+
+    var projection = d3.geo.albers()
+                        .center([0, 36.85])
+                        .rotate([76.5, 0])
+                        .parallels([36.5, 37.5])
+                        .scale(24000)
+                        .translate([305, 334]);
+
+    var path = d3.geo.path()
+                .projection(projection);
+
+
+    var margin = {top: 20, right: 20, bottom: 30, left: 40},
+        width = 620 - margin.left - margin.right,
+        height = 490 - margin.top - margin.bottom;
+
+    var lowercharts = d3.select("body").append("div")
+						.attr("style", "width:700px;height:500px;display:inline-block");
+						
+
+    var cpsvgonly = lowercharts.append("svg")
+                .attr("id", "cpsvg")
+                .attr("width", 620)
+                .attr("height", 490)
+                .attr("style", "background-color: #ffffff");
+
+    var cpsvg = cpsvgonly.append("g")
+                .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+    // add the tooltip area to the webpage
+    var cptooltip = d3.select("body").append("div")
+        .attr("class", "cptooltip")
+        .style("opacity", 0);
+		
+    var localities = new Array();
+
+    d3.json("hrCounties-topo.json", function(error1, hr) {
+        if (error1) return console.error(error1);
+
+        d3.tsv("grad_rates.csv", function(error2, findata) {
+            if (error2) return console.error(error2);
+
+            // intialize grad_avg and color
+            for (var j = 0; j < hr.objects.hrCounties.geometries.length; j++) {
+                hr.objects.hrCounties.geometries[j].properties.grad_avg = 0; 
+                hr.objects.hrCounties.geometries[j].properties.color = "#edf8e9";
+            }
+
+            yearSet = "2014";
+            student_dataSet = "ALL";
+            localitySet = "ALL";
+
+            for (var locality in localityList) {
+                localityoptions.append("option").text(localityList[locality])
+                    .attr("value", locality).attr("selected");
+            }
+
+            /*
+            for (var i = 0; i < localities.length; i++) {
+                localityoptions.append("option").text(localityList[localities[i]])
+                    .attr("value", localities[i]).attr("selected");
+            }
+            */
+
+            var student_dataChange = function(d, id) {
+                student_dataSet = d3.event.target.value; 
+                drawChoropleth();
+                drawBarchart();
+                drawLinechart();
+            }
+
+            var yearChange = function(d, id) {
+                yearSet = d3.event.target.value; 
+                drawChoropleth();
+                drawBarchart();
+                drawLinechart();
+            }
+
+            var localityChange = function(d, id) {
+                localitySet = d3.event.target.value; 
+                drawChoropleth();
+                drawBarchart();
+                drawLinechart();
+            }
+
+            d3.select("#student_data").on("change", student_dataChange);
+            d3.select("#year").on("change", yearChange);
+            d3.select("#locality").on("change", localityChange);
+
+            drawChoropleth();
+
+            function fetchColor(value) {
+
+                if (value <= 0) {
+                    color = "#edf8e9";
+                } else if (value < 79) { 
+                    color = "#bae4b3";
+                } else if (value < 83) {
+                    color = "#74c476";
+                } else if (value < 89) {
+                    color = "#31a354";
+                } else {
+                    color = "#006d2c";
+                }
+
+                return color;
+            }
+
+            function drawChoropleth() {
+
+                // initialize all values to 0
+                for (var j = 0; j < hr.objects.hrCounties.geometries.length; j++) {
+                    hr.objects.hrCounties.geometries[j].properties.grad_avg = 0;    
+                }
+
+                // set all grad_avg and color for localities in choropleth
+                for (var i = 0; i < findata.length; i++) {
+                    for (var j = 0; j < hr.objects.hrCounties.geometries.length; j++) {
+    
+                        if (findata[i].region == "ALL") { 
+                            if (findata[i].locality != "ALL") {
+    
+                                if (findata[i].year == yearSet) {
+                                   
+                                    if (findata[i].student_data == student_dataSet) {
+    
+                                        if (findata[i].locality == hr.objects.hrCounties.geometries[j].properties.name) {
+                                            hr.objects.hrCounties.geometries[j].properties.grad_avg = findata[i].grad_avg; 
+                                            break; // stop since we made our match
+                                        }
+                                    }
+    
+                                }
+                            }
+                        }
+                    }
+                }
+
+                cpsvg.append("text")
+                    .attr("x", (width / 2) - 50 )
+                    .attr("y", 0 - (margin.top / 4) + 20)
+                    .attr("text-anchor", "end")  
+                    .style("font-size", "18px") 
+                    .text("Geography of Graduation Rates");
+    
+                var subunits = cpsvg.selectAll(".subunit")
+                    .data(topojson.feature(hr, hr.objects.hrCounties).features)
+                    .enter().append("path")
+                    .style("fill", function(d) {
+                            if (localitySet == "ALL") {
+                                return fetchColor(d.properties.grad_avg);
+                            }
+
+                            if (d.properties.name == localitySet) {
+                                return fetchColor(d.properties.grad_avg);
+                            } else {
+                                return "#dddddd";
+                            }
+
+                        })
+                    .attr("d", path)
+                    .on("click", function(d, i) {
+                        
+						var iframeSrc="http://www.cs.odu.edu/~psajjan/HRPDC_Project/Grad_Rates/Counties/",
+							panel1Src="/line_gender.html",
+							panel2Src="/line_race.html",
+							panel3Src="/line_socio.html",
+							panel4Src="/line_VA.html";
+						var cityName=d.properties.name.replace(' ','_');
+						$("#iframe1").attr("src",iframeSrc+cityName+panel1Src);
+						$("#iframe2").attr("src",iframeSrc+cityName+panel2Src);
+						$("#iframe3").attr("src",iframeSrc+cityName+panel3Src);
+						$("#iframe4").attr("src",iframeSrc+cityName+panel4Src);
+						
+						
+						$("#cityPanels").attr("style","display:block");
+						d3.select(this).attr("class", "selected");
+                        cptooltip.transition()
+                                .duration(200)
+                                .style("opacity", .9);
+
+                        format = d3.format(",.2f");
+                        displaygrad_avg = format(d.properties.grad_avg);
+                    })
+					.on("mouseover", function(d, i) {
+                        d3.select(this).attr("class", "selected");
+                        cptooltip.transition()
+                                .duration(200)
+                                .style("opacity", .9);
+
+                        format = d3.format(",.2f");
+                        displaygrad_avg = format(d.properties.grad_avg);
+    
+                        cptooltip.html(localityList[d.properties.name])
+                             .style("left", (d3.event.pageX + 10) + "px")
+                             .style("top", (d3.event.pageY - 28) + "px");
+                    })
+                    .on("mouseout", function(d, i) {
+                        d3.select(this).attr("class", function(d) { return "subunit" + d.id; })
+                        cptooltip.transition()
+                             .duration(500)
+                             .style("opacity", 0);
+                    })
+                    .on("mousemove", function(d, i) {
+                        d3.select(this).attr("class", "selected");
+                    });
+       
+                // create the boundaries
+                cpsvg.append("path")
+                    .datum(topojson.mesh(hr, hr.objects.hrCounties), function (a, b) { return a!=b; })
+                    .attr("d", path)
+                    .attr("class", "subunit-boundary");
+
+                colors = d3.scale.ordinal()
+                    .domain( [ "<= $0", "$0 - $500,000", "$500,000 - $2,000,000", "$2,000,000 - $8,000,000", "> $8,000,000" ] )
+                    .range(colorbrewer.Greens[5]);
+
+            }
+
+            function drawBarchart() {
+
+                var bardata = new Array();
+
+                // clear the chart
+                d3.select("#barchart").selectAll("*").remove();
+
+                // select just the data we want
+                for (var i = 0; i < findata.length; i++) {
+
+                    if (findata[i].region != "ALL") {
+                        if (findata[i].year == yearSet) {
+                            if (findata[i].student_data == student_dataSet) {
+    
+                                if (findata[i].locality == localitySet) {
+                                    region = findata[i].region;
+                                    grad_avg = findata[i].grad_avg;
+                                    locality = findata[i].locality;
+                                    student_data = findata[i].student_data;
+                                    year = findata[i].year;
+    
+                                    barobj = { "region" : region, "grad_avg" : grad_avg, "Locality" : locality, "Year" : year, "student_data" : student_data };
+                                    bardata[bardata.length] = barobj;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                if (bardata.length > 0) {
+
+                    bardata.sort(function(a, b) {
+                        return a.grad_avg - b.grad_avg;
+                    });
+
+                    bardata.reverse();
+
+                    bardataTop5 = new Array();
+
+                    if (bardata.length >= 5) {
+                        topN = 5;
+                    } else {
+                        topN = bardata.length;
+                    }
+
+                    for (var i = 0; i < topN; i++) {
+                        bardataTop5[bardataTop5.length] = bardata[i];
+                    }
+
+                    var x = d3.scale.ordinal()
+                        .rangeRoundBands([0, width - 200], .1);
+                    
+                    var y = d3.scale.linear()
+                        .range([height, 0]);
+                    
+                    var xAxis2 = d3.svg.axis()
+                        .scale(x)
+                        .orient("bottom");
+                    
+                    var yAxis2 = d3.svg.axis()
+                        .scale(y)
+                        .orient("left")
+                        .ticks(10, "$,.0f");
+
+                    x.domain(bardataTop5.map(function(d) { return d.region; }));
+                    y.domain([ 0, bardataTop5[0].grad_avg ]);
+
+                    barsvg.append("g")
+                        .attr("class", "y axis")
+                        .call(yAxis2)
+                        .append("text")
+                        .attr("transform", "rotate(-90)")
+                        .attr("y", 6)
+                        .attr("dy", ".71em")
+                        .style("text-anchor", "end");
+
+                    barsvg.selectAll(".bar")
+                        .data(bardataTop5)
+                        .enter().append("rect")
+                        .style("fill", function(d) {
+                          return "steelblue";
+                        })
+                        .attr("x", function(d) { return x(d.region); })
+                        .attr("width", "64")
+                        .attr("y", function(d) { return y(d.grad_avg); })
+                        .attr("height", function(d) { return height - y(d.grad_avg); })
+                        .on("click", function(d, i) {
+                            d3.select(this).attr("class", "selected");
+                            bartooltip.transition()
+                                    .duration(200)
+                                    .style("opacity", .9);
+
+                            format = d3.format("0,000");
+                            displaygrad_avg = format(d.grad_avg);
+
+                            bartooltip.html(d.region + "<br />$" + displaygrad_avg)
+                                    .style("left", (d3.event.pageX + 10) + "px")
+                                    .style("top", (d3.event.pageY - 150) + "px");
+                        })
+                        .on("mouseout", function(d, i) {
+                            d3.select(this).attr("class", "notselected");
+                            bartooltip.transition()
+                                 .duration(500)
+                                 .style("opacity", 0);
+                        })
+                        .on("mousemove", function(d, i) {
+                            d3.select(this).attr("class", "selected");
+                        });
+
+                    bartitle = barsvg.append("g")
+                        .append("text")
+                        .style("font-size", "20px") 
+                        .attr("x", (width / 2) - 50 )
+                        .attr("y", 0 - (margin.top / 4) - 5)
+                        .attr("id", "top5label");
+
+                    bartitle.append("tspan")
+                        .attr("x", "200")
+                        .attr("dy", "1.2em")
+                        .text("Top 5 Industries");
+
+                    /*
+                    bartitle.append("tspan")
+                        .attr("x", "200")
+                        .attr("dy", "1.2em")
+                        .text("for student_data " + student_dataSet);
+
+                    bartitle.append("tspan")
+                        .attr("x", "200")
+                        .attr("dy", "1.2em")
+                        .text("for year " + yearSet);
+
+                    bartitle.append("tspan")
+                        .attr("x", "200")
+                        .attr("dy", "1.2em")
+                        .text("for locality " + localitySet);
+                        */
+
+                } else {
+
+                    errortext = barsvg.append("g")
+                        .append("text")
+                        .style("font-size", "20px")
+                        .attr("x", -50)
+                        .attr("y", 200)
+                        .text("");
+
+                    errortext.append("tspan")
+                        .attr("x", 0)
+                        .attr("dy", "1.2em")
+                        .text("No region data for ");
+
+                    errortext.append("tspan")
+                        .attr("x", 0)
+                        .attr("dy", "1.2em")
+                        .text("student_data " + student_dataSet);
+
+                    errortext.append("tspan")
+                        .attr("x", 0)
+                        .attr("dy", "1.2em")
+                        .text("for year " + yearSet);
+
+                    errortext.append("tspan")
+                        .attr("x", 0)
+                        .attr("dy", "1.2em")
+                        .text("for locality " + localityList[localitySet]);
+
+                }
+
+            }
+
+            function drawLinechart() {
+
+                var linedata = new Array();
+
+                // clear the chart
+                d3.select("#linechart").selectAll("*").remove();
+
+                // select just the data we want
+                for (var i = 0; i < findata.length; i++) {
+                    if (findata[i].region == "ALL") {
+                        if (findata[i].locality == localitySet) {
+                            if (findata[i].student_data == student_dataSet) {
+
+                                region = findata[i].region;
+                                locality = findata[i].locality;
+                                student_data = findata[i].student_data;
+                                year = findata[i].year;
+                                grad_avg = +findata[i].grad_avg;
+                        
+                                lineobj = { "region" : region, "grad_avg" : grad_avg, "Locality" : locality, "Year" : year, "student_data" : student_data };
+                                linedata[linedata.length] = lineobj;
+                            }
+                        }
+                    }
+                }
+
+                var borderPath = linesvgonly.append("rect")
+       			    .attr("x", 0)
+       			    .attr("y", 0)
+                    .attr("height", upperchartheight + margin.top + margin.bottom)
+                    .attr("width", upperchartwidth + margin.left + margin.right)
+       			    .style("stroke", "#000000")
+       			    .style("fill", "none")
+       			    .style("stroke-width", 1);
+
+                // Set the ranges
+                var x = d3.scale.linear().range([0, upperchartwidth]);
+                var y = d3.scale.linear().range([upperchartheight, 0]);
+                
+                // Define the axes
+                var xAxis = d3.svg.axis().scale(x)
+                    .orient("bottom")
+                    .ticks(5, "0000")
+                    .tickValues([ 2010, 2011, 2012, 2013, 2014, 2015 ]);
+                
+                var yAxis = d3.svg.axis().scale(y)
+                    .orient("left").ticks(3, "$,.0f");
+
+                // Define the line
+                var line = d3.svg.line()
+                    .x(function(d) { return x(d.Year); })
+                    .y(function(d) { return y(d.grad_avg); });
+
+                yearmin = d3.min(linedata, function(d) { return +d.Year; }) - 1;
+                yearmax = d3.max(linedata, function(d) { return +d.Year; }) + 2;
+
+                // Scale the range of the data
+                x.domain( [ yearmin, yearmax ] );
+                y.domain([0, d3.max(linedata, function(d) { return d.grad_avg; })]);
+
+                if ( linedata.length > 0 ) {
+
+                    // Add the line path
+                    linesvg.append("path")
+                        .datum(linedata)
+                        .attr("class", "line")
+                        .attr("d", line);
+                    
+                    // Add the X Axis
+                    linesvg.append("g")
+                        .attr("class", "x axis")
+                        .attr("transform", "translate(0," + upperchartheight + ")")
+                        .call(xAxis);
+    
+                    linesvg.selectAll("dot")
+                        .data(linedata)
+                        .enter().append("circle")
+                        .attr("r", 5.5)
+                        .attr("cx", function(d) { return x(d.Year); })
+                        .attr("cy", function(d) { return y(d.grad_avg); })
+                        .style("fill", function(d) {
+                            if ( d.Year == yearSet ) {
+                                return "#ff0000";
+                            } else {
+                                return "#000000";
+                            }
+                        })
+                        .on("click", function(d) {
+                            format = d3.format("0,000");
+    
+                            linetooltip.transition()
+                                 .duration(200)
+                                 .style("opacity", .9);
+                            linetooltip.html(
+                                    "Year: " + d.Year + "<br/> " +
+                                    "student_data:  " + student_dataSet + "<br />" + 
+                                    "Locality: " + localityList[localitySet] + "<br />" +
+                                    "grad_avg: $" + format(d.grad_avg)
+                                    )
+                                 .style("left", (d3.event.pageX + 10) + "px")
+                                 .style("top", (d3.event.pageY - 28) + "px");
+                        })
+                        .on("mouseout", function(d) {
+                            linetooltip.transition()
+                                 .duration(500)
+                                 .style("opacity", 0);
+                        });
+    
+                    linesvg.append("line")
+                        .attr("x1", x(yearSet))  //<<== change your code here
+                        .attr("y1", 0 - margin.top - margin.bottom)
+                        .attr("x2", x(yearSet))  //<<== and here
+                        .attr("y2", upperchartheight)
+                        .style("stroke-width", 2)
+                        .style("stroke", "red")
+                        .style("fill", "none");
+
+                }
+
+                linesvg.append("text")
+                    .attr("id", "linelabel")
+                    .attr("x", -80)
+                    .attr("y", 0)
+                    .attr("text-anchor", "middle")
+                    .style("font-size", "20px")
+                    .text("grad_avg Trend");
+                
+            }
+                
+        });
+         
+    });
+
+</script>
+</body>
+
+<iframe src="http://www.cs.odu.edu/~psajjan/cs698/Grad_Rates/Overall.html" width="920" height="500">
+  <p>Your browser does not support iframes.</p>
+</iframe>
+<div id="cityPanels" style="display:none">
+	<iframe id="iframe1" width="400" height="400">
+		<p>Your browser does not support iframes.</p>
+	</iframe>
+	<iframe id="iframe2" width="400" height="400">
+		<p>Your browser does not support iframes.</p>
+	</iframe>
+	<iframe id="iframe3" width="400" height="400">
+		<p>Your browser does not support iframes.</p>
+	</iframe>
+	<iframe id="iframe4" width="400" height="400">
+		<p>Your browser does not support iframes.</p>
+	</iframe>
+</div>
+
+
+
+</html>

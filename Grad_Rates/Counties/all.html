@@ -1,0 +1,142 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<title>Untitled 1</title>
+
+<style type="text/css">
+.tabs {
+    width:100%;
+    display:inline-block;
+}
+ 
+    /*----- Tab Links -----*/
+    /* Clearfix */
+    .tab-links:after {
+        display:block;
+        clear:both;
+        content:'';
+    }
+ 
+    .tab-links li {
+        margin:0px 5px;
+        float:left;
+        list-style:none;
+    }
+ 
+        .tab-links a {
+            padding:9px 15px;
+            display:inline-block;
+            border-radius:3px 3px 0px 0px;
+            background:#7FB5DA;
+            font-size:16px;
+            font-weight:600;
+            color:#4c4c4c;
+            transition:all linear 0.15s;
+        }
+ 
+        .tab-links a:hover {
+            background:#a7cce5;
+            text-decoration:none;
+        }
+ 
+    li.active a, li.active a:hover {
+        background:#ff8566;
+        color:#4c4c4c;
+    }
+ 
+    /*----- Content of Tabs -----*/
+    .tab-content {
+        padding-left:40px;
+		padding-bottom:5px;
+		padding-top:1px;
+		padding-right:15px;
+        border-radius:5px;
+        box-shadow:-1px 1px 1px rgba(0,0,0,0.5);
+        background:#fff;
+    }
+ 
+        .tab {
+            display:none;
+        }
+ 
+        .tab.active {
+            display:block;
+        }
+		.tab-links{
+		  margin:9px 1px 4px 128px;
+		
+		}
+		
+</style>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+<script type="text/javascript" src="test.js"></script>
+
+</head>
+
+<body>
+<div class="tabs">
+    <ul class="tab-links">
+        <li class="active"><a href="#tab1">Read Me</a></li>
+        <li><a href="#tab2">Chesapeake City</a></li>
+		<li><a href="#tab3">Norfolk City</a></li>
+        <li><a href="#tab4">Newport News City</a></li>
+        <li><a href="#tab5">Hampton City</a></li>
+		<li><a href="#tab6">Suffolk City</a></li>
+		<li><a href="#tab7">Virginia Beach City</a></li>
+		<li><a href="#tab8">Portsmouth City</a></li>
+		<li><a href="#tab9">Overall comparison with Virginia State</a></li>
+    </ul>
+ 
+    <div class="tab-content">
+        <div id="tab1" class="tab active">
+            <p>Tab #1 content goes here!</p>
+            <p>Donec pulvinar neque sed semper lacinia. Curabitur lacinia ullamcorper nibh; quis imperdiet velit eleifend ac. Donec blandit mauris eget aliquet lacinia! Donec pulvinar massa interdum ri.</p>
+        </div>
+ 
+        <div id="tab2" class="tab">
+            <object type="text/html" data="http://www.cs.odu.edu/~psajjan/InfoViz_Project/Grad_rates/Chesapeake/line.html" width="1850" height="920" style="overflow:auto;">
+    </object>
+        </div>
+ 
+        <div id="tab3" class="tab">
+            <object type="text/html" data="http://www.cs.odu.edu/~psajjan/InfoViz_Project/Grad_rates/Norfolk/line.html" width="1850" height="920" style="overflow:auto;">
+		</object>
+        </div>
+ 
+        <div id="tab4" class="tab">
+            <object type="text/html" data="http://www.cs.odu.edu/~psajjan/InfoViz_Project/Grad_rates/Newport_News/line.html" width="1850" height="920" style="overflow:auto;">
+		</object>
+        </div>
+		
+		<div id="tab5" class="tab">
+            <object type="text/html" data="http://www.cs.odu.edu/~psajjan/InfoViz_Project/Grad_rates/Hampton/line.html" width="1850" height="920" style="overflow:auto;">
+		</object>
+        </div>
+		
+		<div id="tab6" class="tab">
+            <object type="text/html" data="http://www.cs.odu.edu/~psajjan/InfoViz_Project/Grad_rates/Suffolk/line.html" width="1850" height="920" style="overflow:auto;">
+		</object>
+        </div>
+		
+		<div id="tab7" class="tab">
+            <object type="text/html" data="http://www.cs.odu.edu/~psajjan/InfoViz_Project/Grad_rates/Virginia_Beach/line.html" width="1850" height="920" style="overflow:auto;">
+		</object>
+        </div>
+		
+		<div id="tab8" class="tab">
+            <object type="text/html" data="http://www.cs.odu.edu/~psajjan/InfoViz_Project/Grad_rates/Portsmouth/line.html" width="1850" height="920" style="overflow:auto;">
+		</object>
+        </div>
+
+		<div id="tab9" class="tab">
+            <object type="text/html" data="http://www.cs.odu.edu/~psajjan/InfoViz/Grad_rates/Overall.html" width="1850" height="850" style="overflow:auto;">
+		</object>
+        </div>
+    </div>
+</div>
+</body>
+</html>

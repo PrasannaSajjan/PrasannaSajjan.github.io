@@ -1,0 +1,319 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2016.4.30)  4 MAY 2016 01:06
+entering extended mode
+**./main.tex
+(main.tex
+LaTeX2e <2015/10/01> patch level 2
+Babel <3.9m> and hyphenation patterns for 69 languages loaded.
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\article.cls"
+Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\size12.clo"
+File: size12.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@section=\count80
+\c@subsection=\count81
+\c@subsubsection=\count82
+\c@paragraph=\count83
+\c@subparagraph=\count84
+\c@figure=\count85
+\c@table=\count86
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+) (natbib.sty
+Package: natbib 1998/07/14 6.8c (PWD)
+\bibhang=\skip43
+\bibsep=\skip44
+LaTeX Info: Redefining \cite on input line 467.
+\c@NAT@ctr=\count87
+)
+(C:\Users\psajjan\AppData\Roaming\MiKTeX\2.9\tex\latex\url\url.sty
+\Urlmuskip=\muskip10
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\inputenc.sty"
+Package: inputenc 2015/03/17 v1.2c Input encoding file
+\inpenc@prehook=\toks14
+\inpenc@posthook=\toks15
+ (utf8x.def
+File: utf8x.def 2004/10/17 UCS: Input encoding UTF-8
+))
+(ucs.sty
+Package: ucs 2013/05/11 v2.2 UCS: Unicode input support
+ (uni-global.def
+File: uni-global.def 2013/05/13 UCS: Unicode global data
+)
+\uc@secondtry=\count88
+\uc@combtoks=\toks16
+\uc@combtoksb=\toks17
+\uc@temptokena=\toks18
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\graphicx.sty"
+Package: graphicx 2014/10/28 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\keyval.sty"
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks19
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\graphics.sty"
+Package: graphics 2014/10/28 v1.0p Standard LaTeX Graphics (DPC,SPQR)
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\trig.sty"
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\00miktex\graphics.cfg"
+File: graphics.cfg 2007/01/18 v1.5 graphics configuration of teTeX/TeXLive
+)
+Package graphics Info: Driver file: pdftex.def on input line 94.
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\pdftex-def\pdftex.def"
+File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\infwarerr.sty"
+Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\ltxcmds.sty"
+Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
+)
+\Gread@gobject=\count89
+))
+\Gin@req@height=\dimen103
+\Gin@req@width=\dimen104
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ltxmisc\parskip.sty"
+Package: parskip 2001/04/09 non-zero parskip adjustments
+)
+(fancyhdr.sty
+\fancy@headwidth=\skip45
+\f@ncyO@elh=\skip46
+\f@ncyO@erh=\skip47
+\f@ncyO@olh=\skip48
+\f@ncyO@orh=\skip49
+\f@ncyO@elf=\skip50
+\f@ncyO@erf=\skip51
+\f@ncyO@olf=\skip52
+\f@ncyO@orf=\skip53
+) (vmargin.sty
+Package: vmargin 1999/06/01
+
+Package `vmargin', V2.2, <1999/06/01>
+\PaperWidth=\dimen105
+\PaperHeight=\dimen106
+) (main.aux
+
+LaTeX Warning: Label `highq' multiply defined.
+
+
+LaTeX Warning: Label `highq' multiply defined.
+
+
+LaTeX Warning: Label `highq' multiply defined.
+
+
+LaTeX Warning: Label `highq' multiply defined.
+
+
+LaTeX Warning: Label `highq' multiply defined.
+
+
+LaTeX Warning: Label `highq' multiply defined.
+
+)
+\openout1 = `main.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+ (ucsencs.def
+File: ucsencs.def 2011/01/21 Fixes to fontencodings LGR, T3
+)
+(C:\Users\psajjan\AppData\Roaming\MiKTeX\2.9\tex\context\base\supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count90
+\scratchdimen=\dimen107
+\scratchbox=\box26
+\nofMPsegments=\count91
+\nofMParguments=\count92
+\everyMPshowfont=\toks20
+\MPscratchCnt=\count93
+\MPscratchDim=\dimen108
+\MPnumerator=\count94
+\makeMPintoPDFobject=\count95
+\everyMPtoPDFconversion=\toks21
+) <images/ODU.png, id=1, 134.4222pt x 134.904pt>
+File: images/ODU.png Graphic file (type png)
+ <use images/ODU.png>
+Package pdftex.def Info: images/ODU.png used on input line 35.
+(pdftex.def)             Requested size: 100.81639pt x 101.17775pt.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <12> on input line 47.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 47.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 47.
+ [1
+
+
+
+pdfTeX warning: pdflatex (file pdftex.map): cannot open font map file
+ <./images/ODU.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 61--62
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 61--62
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 63--64
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 65--66
+
+ []
+
+[1] (main.toc)
+\tf@toc=\write3
+\openout3 = `main.toc'.
+
+ [2]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 85.
+ ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\omscmr.fd"
+File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 85.
+ [3] [4] <images/OCC.png, id=29, 831.105pt x 463.7325pt>
+File: images/OCC.png Graphic file (type png)
+
+<use images/OCC.png>
+Package pdftex.def Info: images/OCC.png used on input line 110.
+(pdftex.def)             Requested size: 290.8911pt x 162.30879pt.
+ <images/IND.png, id=30, 797.22844pt x 459.96844pt>
+File: images/IND.png Graphic file (type png)
+
+<use images/IND.png>
+Package pdftex.def Info: images/IND.png used on input line 116.
+(pdftex.def)             Requested size: 279.03413pt x 160.99136pt.
+ [5 <./images/OCC.png> <./images/IND.png>]
+Overfull \hbox (30.42528pt too wide) in paragraph at lines 125--126
+[]\OT1/cmr/m/n/12 Virginia Co-hort Re-ports - $\OT1/cmtt/m/n/12 (http : / / www
+ . doe . virginia . gov / statistics _ reports /$
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 125--126
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 125--126
+
+ []
+
+<images/COMM.png, id=35, 828.09375pt x 456.20438pt>
+File: images/COMM.png Graphic file (type png)
+ <use images/COMM.png>
+Package pdftex.def Info: images/COMM.png used on input line 129.
+(pdftex.def)             Requested size: 289.83716pt x 159.67392pt.
+
+<images/GRAD.png, id=36, 831.85782pt x 448.67625pt>
+File: images/GRAD.png Graphic file (type png)
+ <use images/GRAD.png>
+Package pdftex.def Info: images/GRAD.png used on input line 135.
+(pdftex.def)             Requested size: 291.1546pt x 157.03903pt.
+
+[6 <./images/COMM.png> <./images/GRAD.png>]
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 144.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 144.
+
+Underfull \hbox (badness 10000) in paragraph at lines 144--145
+
+ []
+
+<images/DATA.png, id=41, 910.15031pt x 188.95593pt>
+File: images/DATA.png Graphic file (type png)
+ <use images/DATA.png>
+Package pdftex.def Info: images/DATA.png used on input line 148.
+(pdftex.def)             Requested size: 455.07405pt x 94.47772pt.
+
+Overfull \hbox (27.64252pt too wide) in paragraph at lines 148--149
+ [][] 
+ []
+
+[7 <./images/DATA.png>] <images/Overall.PNG, id=48, 986.18437pt x 643.6547pt>
+File: images/Overall.PNG Graphic file (type png)
+
+<use images/Overall.PNG>
+Package pdftex.def Info: images/Overall.PNG used on input line 163.
+(pdftex.def)             Requested size: 345.1697pt x 225.28252pt.
+ [8 <./images/Overall.PNG>] [9]
+Overfull \hbox (4.97661pt too wide) in paragraph at lines 192--193
+[]\OT1/cmr/bx/n/12 Management \OT1/cmr/m/n/12 oc-cu-pa-tion paid the high-est a
+n-nual salary whereas \OT1/cmr/bx/n/12 Food prepa-
+ []
+
+[10]
+Overfull \hbox (42.9196pt too wide) in paragraph at lines 203--204
+[]\OT1/cmr/bx/n/12 Females \OT1/cmr/m/n/12 dom-i-nated over males in each of th
+e 7 coun-ties, \OT1/cmr/bx/n/12 White \OT1/cmr/m/n/12 and \OT1/cmr/bx/n/12 Asia
+n(minority)
+ []
+
+[11] <images/WWH.PNG, id=64, 627.84563pt x 277.035pt>
+File: images/WWH.PNG Graphic file (type png)
+ <use images/WWH.PNG>
+Package pdftex.def Info: images/WWH.PNG used on input line 222.
+(pdftex.def)             Requested size: 313.92204pt x 138.51715pt.
+
+[12 <./images/WWH.PNG>] [13] [14] [15] (main.aux)
+
+LaTeX Warning: There were multiply-defined labels.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 1958 strings out of 493634
+ 26051 string characters out of 3141308
+ 93921 words of memory out of 3000000
+ 5335 multiletter control sequences out of 15000+200000
+ 10087 words of font info for 36 fonts, out of 3000000 for 9000
+ 1025 hyphenation exceptions out of 8191
+ 27i,10n,43p,734b,301s stack positions out of 5000i,500n,10000p,200000b,50000s
+ <C:\Users\psajjan\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\public\cm\dpi720\
+cmbx12.pk> <C:\Users\psajjan\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\public\cm
+\dpi600\cmtt10.pk> <C:\Users\psajjan\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\p
+ublic\cm\dpi600\cmr10.pk> <C:\Users\psajjan\AppData\Local\MiKTeX\2.9\fonts\pk\l
+jfour\public\cm\dpi600\cmr7.pk> <C:\Users\psajjan\AppData\Local\MiKTeX\2.9\font
+s\pk\ljfour\public\cm\dpi600\cmr8.pk> <C:\Users\psajjan\AppData\Local\MiKTeX\2.
+9\fonts\pk\ljfour\public\cm\dpi600\cmtt12.pk> <C:\Users\psajjan\AppData\Local\M
+iKTeX\2.9\fonts\pk\ljfour\public\cm\dpi720\cmsy10.pk> <C:\Users\psajjan\AppData
+\Local\MiKTeX\2.9\fonts\pk\ljfour\public\cm\dpi600\cmbx12.pk> <C:\Users\psajjan
+\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\public\cm\dpi864\cmbx12.pk> <C:\Users
+\psajjan\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\public\cm\dpi600\cmr12.pk> <C
+:\Users\psajjan\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\public\cm\dpi720\cmr12
+.pk> <C:\Users\psajjan\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\public\cm\dpi72
+0\cmti12.pk> <C:\Users\psajjan\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\public\
+cm\dpi1244\cmbx12.pk> <C:\Users\psajjan\AppData\Local\MiKTeX\2.9\fonts\pk\ljfou
+r\public\cm\dpi1037\cmcsc10.pk> <C:\Users\psajjan\AppData\Local\MiKTeX\2.9\font
+s\pk\ljfour\public\cm\dpi1244\cmcsc10.pk>
+Output written on main.pdf (16 pages, 1998664 bytes).
+PDF statistics:
+ 537 PDF objects out of 1000 (max. 8388607)
+ 0 named destinations out of 1000 (max. 500000)
+ 41 words of extra memory for PDF output out of 10000 (max. 10000000)
+

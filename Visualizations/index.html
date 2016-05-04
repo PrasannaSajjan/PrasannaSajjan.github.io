@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Visualizing Life in Hampton Roads</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/1-col-portfolio.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">
+                    <img src="images/logo.png" alt="">
+                </a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a  data-toggle="modal" data-target="#Contact" >Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container">
+
+        <!-- Page Heading -->
+        <!--<div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">Page Heading
+                    <small>Secondary Text</small>
+                </h1>
+            </div>
+        </div>-->
+        <!-- /.row -->
+
+        <!-- Pro Demo -->
+		<div class="modal fade bs-example-modal-lg" id="Contact" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			
+		  <div class="modal-dialog modal-lg">
+			<div class="modal-content">
+			  <div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title" id="myModalLabel">Visualizing Life in Hampton Roads!</h4>
+			  </div>
+				<div class="modal-body">
+					<div class="col-lg-12">
+						<div class="well text-center">
+							<h1>Prasanna Sajjan</h1>
+							<h4>Graduate Student, Department of Computer Science</h4> Got Questions? <h4>Contact: psajjan@cs.odu.edu</h4>
+						</div>
+					</div>
+				</div>
+			  <div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				<!--<button type="button" class="btn btn-primary">Save changes</button>-->
+			  </div>
+			</div>
+		  </div>
+		</div>
+		
+		<!-- Project One -->
+        <div class="row">
+            <div class="col-md-7">
+                <a href="#">
+                    <img class="img-responsive" src="images/IEChanges.PNG" alt="">
+                </a>
+            </div>
+            <div class="col-md-5">
+                <h3>Income & Employment by Industry</h3>
+                <h4><ins>Goal:</ins></h4>
+                <ul>
+					<li>Indicate visually the change in	and size of employment by industry over	time with the relative incomes of those industries.</li>
+					<li>Measuring the change in incomes of the industry along with changes in employment.</li>
+				</ul>
+				<h4><ins>Insights:</ins></h4>
+                <ul>
+					<li><strong>Trade, transportation and utilities</strong> industry employed the highest number of people whereas <strong>Natural resources and mining</strong> industry employed the least number of people.</li>
+					<li><strong>Manufacturing</strong> industry had the highest annual pay whereas <strong>Leisure and hospitality</strong> industry had the lowest annual pay.</li>
+				</ul>
+				</br>
+                <a class="btn btn-primary" target="_blank" href="https://public.tableau.com/profile/prasanna.sajjan#!/vizhome/ChangesinIncomeEmploymentIndustry/ChancgesinIE">View Change Since Previous Year <span class="glyphicon glyphicon-chevron-right"></span></a> <br/> <br/>
+				<a class="btn btn-primary" target="_blank" href="https://public.tableau.com/profile/prasanna.sajjan#!/vizhome/IncomeEmploymentbyIndustry/IEbyIndustry">View Employment over Time <span class="glyphicon glyphicon-chevron-right"></span></a>
+            </div>
+        </div>
+        <!-- /.row -->
+
+        <hr>
+
+        <!-- Project Two -->
+        <div class="row">
+            <div class="col-md-7">
+                <a href="#">
+                    <img class="img-responsive" src="images/Occupation.PNG" alt="">
+                </a>
+            </div>
+            <div class="col-md-5">
+                <h3>Income & Employment by Occupation</h3>
+                <h4><ins>Goal:</ins></h4>
+                <ul>
+					<li>Indicate visually the change in	and size of employment by occupation over time with the relative incomes of those occupations.</li>
+				</ul>
+				<h4><ins>Insights:</ins></h4>
+                <ul>
+					<li><strong>Office and administrative support</strong> occupation had the highest number of employees whereas <strong>Legal </strong> Occupation had the least number of employees.</li>
+					<li><strong>Management </strong> occupation paid the highest annual salary whereas <strong>Food preparation and serving related </strong> occupation paid the lowest annual salary.</li>
+				</ul>
+				<br/>
+                <a class="btn btn-primary" target="_blank" href="https://public.tableau.com/profile/prasanna.sajjan#!/vizhome/IncomeEmploymentbyOccupationHamptonRoads/IEbyOCCHR">View Employment over Time <span class="glyphicon glyphicon-chevron-right"></span></a>
+            </div>
+        </div>
+        <!-- /.row -->
+
+        <hr>
+
+        <!-- Project Three -->
+        <div class="row">
+            <div class="col-md-7">
+                <a href="#">
+                    <img class="img-responsive" src="images/GradRates.PNG" alt="">
+                </a>
+            </div>
+            <div class="col-md-5">
+                <h3>Changes in Graduation Rates</h3>
+                <h4><ins>Goal:</ins></h4>
+                <ul>
+					<li>Examine the changes in high school graduation rates for each of the localities.</li>
+					<li>Indicate visually, the break down of these graduation rates by gender, race, socio-economic conditions and also compare it with state average of Virginia.</li>
+				</ul>
+				<h4><ins>Insights:</ins></h4>
+                <ul>
+					<li><strong>Chesapeake</strong> city had the highest graduation rates and way above Virginia state's average graduation rate, whereas <strong>Portsmouth </strong> city had the lowest graduation rates.</li>
+					<li><strong>Females </strong> dominated over males in each of the 7 counties, <strong>White and Asian(minority) </strong> race had the highest graduation rate among all the races.</li>
+				</ul>
+				<br/>
+                <a class="btn btn-primary" target="_blank" href="http://www.cs.odu.edu/~psajjan/cs698/Grad_Rates/map.html">View Graduation over Time <span class="glyphicon glyphicon-chevron-right"></span></a>
+            </div>
+        </div>
+        <!-- /.row -->
+
+        <hr>
+
+        <!-- Project Four -->
+        <div class="row">
+
+            <div class="col-md-7">
+                <a href="#">
+                    <img class="img-responsive" src="images/Commute.PNG" alt="">
+                </a>
+            </div>
+            <div class="col-md-5">
+                <h3>Commuting Patterns</h3>
+                <h4><ins>Goal:</ins></h4>
+                <ul>
+					<li>Indicate visually, the flows of commuters throughout the Hampton Roads region.</li>
+				</ul>
+				<h4><ins>Insights:</ins></h4>
+                <ul>
+					<li><strong>Virginia Beach</strong> city had the highest number of commuters, whereas <strong>Mathews </strong> county had the lowest number of commuters.</li>
+					<li><strong>Norfolk </strong> city had the higest retention where 67.63% commuters worked within the city, whereas <strong>York</strong> county had the lowest retention rate where only 27.89% commuters worked within the city.</li>
+				</ul>
+				<br/>
+                <a class="btn btn-primary" target="_blank" href="https://public.tableau.com/profile/prasanna.sajjan#!/vizhome/HamptonRoadsCommutingFlows/HR-Commute">View Flows of Commuters <span class="glyphicon glyphicon-chevron-right"></span></a>
+            </div>
+        </div>
+        <!-- /.row -->
+
+        <hr>
+
+        <!-- Footer -->
+        <footer>
+            <div class="row">
+                <div class="col-lg-12">
+                    <p>Copyright &copy; Prasanna Sajjan 2016</p>
+                </div>
+            </div>
+            <!-- /.row -->
+        </footer>
+
+    </div>
+    <!-- /.container -->
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,65 @@
+region,date,grad_rate
+Virginia,Jan 2008,82.1
+Virginia,Dec 2009,83.2
+Virginia,Dec 2010,85.5
+Virginia,Dec 2011,86.6
+Virginia,Dec 2012,88
+Virginia,Dec 2013,89.1
+Virginia,Dec 2014,89.9
+Virginia,Jun 2015,90.5
+Chesapeake,Jan 2008,90
+Chesapeake,Dec 2009,89.9
+Chesapeake,Dec 2010,91.6
+Chesapeake,Dec 2011,91.4
+Chesapeake,Dec 2012,94.6
+Chesapeake,Dec 2013,94.9
+Chesapeake,Dec 2014,95.7
+Chesapeake,Jun 2015,95.1
+Norfolk,Jan 2008,76.9
+Norfolk,Dec 2009,78.5
+Norfolk,Dec 2010,79.5
+Norfolk,Dec 2011,79.4
+Norfolk,Dec 2012,84.4
+Norfolk,Dec 2013,85.6
+Norfolk,Dec 2014,86.8
+Norfolk,Jun 2015,84.9
+Suffolk,Jan 2008,73.2
+Suffolk,Dec 2009,79.9
+Suffolk,Dec 2010,83.8
+Suffolk,Dec 2011,84.5
+Suffolk,Dec 2012,86.6
+Suffolk,Dec 2013,89.3
+Suffolk,Dec 2014,88.2
+Suffolk,Jun 2015,87.2
+Portsmouth,Jan 2008,64
+Portsmouth,Dec 2009,65.2
+Portsmouth,Dec 2010,71.2
+Portsmouth,Dec 2011,80.2
+Portsmouth,Dec 2012,84.1
+Portsmouth,Dec 2013,85.9
+Portsmouth,Dec 2014,88.1
+Portsmouth,Jun 2015,89.6
+Virginia Beach,Jan 2008,89.1
+Virginia Beach,Dec 2009,89.6
+Virginia Beach,Dec 2010,89.8
+Virginia Beach,Dec 2011,90.8
+Virginia Beach,Dec 2012,91.2
+Virginia Beach,Dec 2013,92.3
+Virginia Beach,Dec 2014,91.9
+Virginia Beach,Jun 2015,92.2
+Hampton,Jan 2008,80.9
+Hampton,Dec 2009,83.3
+Hampton,Dec 2010,87.4
+Hampton,Dec 2011,91.2
+Hampton,Dec 2012,90.9
+Hampton,Dec 2013,92.1
+Hampton,Dec 2014,90.1
+Hampton,Jun 2015,91
+Newport News,Jan 2008,78.7
+Newport News,Dec 2009,79.5
+Newport News,Dec 2010,83
+Newport News,Dec 2011,87
+Newport News,Dec 2012,88.8
+Newport News,Dec 2013,90.1
+Newport News,Dec 2014,92.7
+Newport News,Jun 2015,92.8

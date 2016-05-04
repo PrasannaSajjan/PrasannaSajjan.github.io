@@ -1,0 +1,17 @@
+\contentsline {section}{\numberline {1}Preface}{3}
+\contentsline {section}{\numberline {2}Motivation}{4}
+\contentsline {section}{\numberline {3}Data Sources}{5}
+\contentsline {section}{\numberline {4}Data Set and Cleaning}{7}
+\contentsline {section}{\numberline {5}Overview of the System}{8}
+\contentsline {section}{\numberline {6}Insights}{10}
+\contentsline {subsection}{\numberline {6.1}Income and Employment by Industry}{10}
+\contentsline {subsection}{\numberline {6.2}Income and Employment by Occupation}{10}
+\contentsline {subsection}{\numberline {6.3}High school Graduation rates}{11}
+\contentsline {subsection}{\numberline {6.4}Commuting Patterns}{11}
+\contentsline {section}{\numberline {7}WHAT-WHY-HOW Framework}{12}
+\contentsline {subsection}{\numberline {7.1}What: Data}{12}
+\contentsline {subsection}{\numberline {7.2}Why: Actions and Abstract Tasks}{12}
+\contentsline {subsection}{\numberline {7.3}How: Encode}{13}
+\contentsline {subsection}{\numberline {7.4}How: Reduce/Manipulate}{13}
+\contentsline {section}{\numberline {8}Challenges}{14}
+\contentsline {section}{\numberline {9}Future Work}{15}
